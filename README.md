@@ -1,40 +1,32 @@
----
-#marp: true
+![w:100](guatejug.png)
 
----
 # Java Streams con Java 11
 
 * Mario Batres
 * CTO en Logistika 360
 * @mariobatres7
 
-![bg right w:400](guatejug.png)
-
----
-
-
 
 ## Introducción
-![bg fit opacity:0.1](guatejug.png)
 
 * Una de las características importantes en Java 8 fue la introducción de Lambdas.
 * El uso más importante fue el uso de Stream API.
 * El Stream API permite manipular colecciones de manera funcional.
 * Es un componente que es capaz de iterar de manera interna sus propios elementos.
 * No han existido muchos cambios importantes desde Java 8  a Java 11.
----
+
 
 ## ¿Cómo es el procesamiento de un Stream? 
-![bg fit opacity:0.1](guatejug.png)
+
 
 * Es posible agregar _listeners_ a un Stream.  Esto se llaman cuando el Stream recorre los elementos de manera interna.
 
 * Los listeners forman una cadena de procesamiento, el primer listener procesa el elemento y este retorna un nuevo elemento o el mismo para que el siguiente listener en la cadena lo procese.
 
----
-![bg fit opacity:0.1](guatejug.png)
 
-## Antes y Después de Java 8 (1)
+
+
+## Antes y Después de Java 8 
 
 Antes de Java 8:
 
@@ -46,10 +38,6 @@ for (Integer element : array) {
 }
 
 ```
----
-
-## Antes y Después de Java 8 (2)
-![bg fit opacity:0.1](guatejug.png)
 
 Desde Java 8:
 
@@ -58,9 +46,9 @@ Integer[] array = {1, 2, 3, 4, 5};
 Stream.of(array).forEach(System.out::println);
 ```
 
----
+
 ## ¿Cómo usar Stream API?
-![bg fit opacity:0.1](guatejug.png)
+
 
 * Desde Java 8 se agregó el método stream() a la interface _Collection_.
 * Se puede utilizan en las clases que implementan la interfaces _List_ y _Set_.
@@ -78,7 +66,7 @@ List<String> paisList = Arrays.asList("Guatemala",
 paisList.stream().forEach(pais -> System.out.println(pais));
         
 ```
----
+
 
 ## Operaciones Terminales 
 
@@ -92,8 +80,8 @@ paisList.stream().forEach(pais -> System.out.println(pais));
   * count
   * findAny
   * ...
----
-![bg fit opacity:0.1](guatejug.png)
+
+
 
 ## Operaciones no Terminales 
 
@@ -107,10 +95,7 @@ paisList.stream().forEach(pais -> System.out.println(pais));
   * distinct
   * ...
 
----
-![bg fit opacity:0.1](guatejug.png)
-
-## Operaciones con Stream API (1)
+## Operaciones con Stream API 
 
 * forEach 
   * Este es el método más común del API.
@@ -123,10 +108,7 @@ paisList.stream().forEach(pais -> System.out.println(pais));
   * Una colección puede ser una _List_ o _Set_.
 * filter 
   * Produce un nuevo stream luego de filtrarlo.
----
-![bg fit opacity:0.1](guatejug.png)
 
-## Operaciones con Stream API (2)
 * findFirst 
   * Retorna un tipo Optional para el primer elemento dentro del Stream.
 * toArray
@@ -135,10 +117,10 @@ paisList.stream().forEach(pais -> System.out.println(pais));
   * Para uso de estructuras complejas, por ejmplo, un List<T> como attributo.
 * peek
   * Parecido al forEach, solamente que forEach es una operación terminal, mientras que esta es una operación intermedia, que se utiliza para visualizar el contenido del elemento sin necesidad de cambiar su tipo.
----
-![bg fit opacity:0.1](guatejug.png)
 
-## Comparaciones con Stream API (1)
+
+
+## Comparaciones con Stream API
 
 * sorted
   * Ordena el stream de acuerdo a una función de comparación.
@@ -146,10 +128,6 @@ paisList.stream().forEach(pais -> System.out.println(pais));
   * Devuelve un tipo Optional donde de acuerdo a la función de comparación se determina el elemento mínimo del stream.
 * max
   * Devuelve un tipo Optional donde de acuerdo a la función de comparación se determina el elemento máximo del stream.
----
-![bg fit opacity:0.1](guatejug.png)
-
-## Comparaciones con Stream API (2)
 * distinct
   * Retorna los elementos distintos de un Stream.
 * allMatch
@@ -158,14 +136,14 @@ paisList.stream().forEach(pais -> System.out.println(pais));
   * Devuelve verdadero si algúnos de los elementos del stream cumple con la condición o predicado que se le envía como parámetro.
 * noneMatch
   * Devuelve verdadero si todos los elementos del stream no cumple con la condición o predicado que se le envía como parámetro.
----
+
 
 ## Operaciones de Reducción
 
 * reduce 
   * Acumula el resultado de la operación.
----
-![bg fit opacity:0.1](guatejug.png)
+
+
 ## Recolección avanzada
 
 * joining
@@ -179,18 +157,18 @@ paisList.stream().forEach(pais -> System.out.println(pais));
 * groupingBy
   * Clasifica y agrupa un Stream bajo un alguna clave.
 
----
-![bg fit opacity:0.1](guatejug.png)
+
+
 ## Lo nuevo en Java 9
 
 * takeWhile
 * dropWhile
 * iterate
 * ofNullable
----
+
 ## Preguntas y Comentarios
 
 Muchas gracias 
 
 
-![bg fit opacity:0.9](duke-chicabal.jpg)
+![](duke-chicabal.jpg)
